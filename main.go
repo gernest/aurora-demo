@@ -23,5 +23,7 @@ func main() {
 	rx := aurora.NewRemix(cfg)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./public"))))
 	http.Handle("/", rx.Routes())
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
+	port := os.Getenv("PORT")
+	log.Println("starting at port ", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
