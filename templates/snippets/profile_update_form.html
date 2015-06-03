@@ -1,0 +1,75 @@
+{{$g:=.}}
+{{with .profile}}
+<div class="container">
+    <h4 class="pavement center-align ">badili habari zangu</h4>
+    <div class="row">
+        <form class="col s12" action="/profile?u=true&id={{.ID}}&" method="post">
+           {{if $g.error}}
+            <div class="row">
+                <p class="center-align pavement red">{{$g.error}}</p>
+            </div>
+            {{end}}
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="first_name" placeholder="aurora" id="first-name" type="text" class="validate">
+                    <label for="first-name">jina la kwanza</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="last_name" id="last_name" type="text" class="validate">
+                    <label for="last_name">jina la mwisho</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="birth_date" id="birth-date" type="text"  value="{{.MyBirthDay}}">
+                    <label for="birth-date">tarehe ya kuzaliwa</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="gender">
+                        <option value="" >Chagua jinsia</option>
+                        <option value="1">mwanaume</option>
+                        <option value="2">mwanamke</option>
+                        <option value="3">zombie</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="city" id="city" type="text" class="validate">
+                    <label for="city">jiji</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="country" id="country" type="text" class="validate">
+                    <label for="country">Nchi</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="street" id="street" type="text" class="validate">
+                    <label for="street">Mtaa</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Tuma
+                <i class="mdi-content-send right"></i>
+            </button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="pavement" id="gallery-upload">
+            <div class="container">
+                <ul>
+                    <li><a class="btn blue block" pid="{{.ID}}" id="pandisha-kibao">Pandisha picha zangu</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="preview-container"></div>
+    </div>
+</div>
+{{template "snippets/profile_pic_upload" .}}
+{{end}}

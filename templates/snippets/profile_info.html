@@ -1,0 +1,81 @@
+{{$u:=.user}}
+{{ with .profile }}
+<div class="container">
+    <div class="row">
+        <div class="col sm12 m12">
+            <ul class="collection">
+                <li class="collection-item">
+                    <h5>
+                        <span>{{ .FirstName}}</span>
+                        <span>{{.LastName }}</span>
+                    </h5>
+                </li>
+                <li class="collection-item ">
+                    <span class="title">umri</span>
+                    <h5>{{.Age}}</h5>
+                </li>
+                <li class="collection-item">
+                    <span class="title">jinsia</span>
+                    <h5>{{.Sex}}</h5>
+                </li>
+                <li class="collection-item">
+                    <span class="title">Jiji</span>
+                    <h5>{{.City}}</h5>
+                </li>
+                <li class="collection-item ">
+                    <span class="title">Nchi</span>
+                    <h5>{{.Country}}</h5>
+                </li>
+                <li class="collection-item ">
+                    <span class="title">Mtaa</span>
+                    <h5>{{.Street}}</h5>
+                </li>
+            </ul>
+
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="mdi-image-exposure"></i>angalia picha zangu</div>
+                    <div class="collapsible-body">
+                        {{with .Photos}}
+                        <div class="container">
+                            {{range .}}
+                            <img src="/imgs?iid={{.ID}}&pid={{.UploadedBy}}" alt="" class="responsive-img materialboxed" id="profile-picture">
+                            {{end}}
+                        </div>
+                        {{else}}
+                        <p>hakuna picha yoyote</p>
+                        {{end}}
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="mdi-communication-chat"></i>nitumie ujumbe</div>
+                    <div class="collapsible-body">
+                        <div class="container">
+                            <form id="msg">
+                                <div class="row">
+                                    <div class="progress hide">
+                                        <div class="indeterminate"></div>
+                                    </div>
+                                    <form class="col s12" id="msg">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <textarea id="msg-text" class="materialize-textarea"></textarea>
+                                                <label for="msg-text">Andika ujumbe wako hapa</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="container">
+                                                <button class="btn block msg-send" msg-r="{{.ID}}" msg-s="{{$u.ID}}">tuma</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{{ end }}

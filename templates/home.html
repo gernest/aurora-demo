@@ -1,0 +1,7 @@
+{{template "base/head" .}}
+{{if .InSession}}
+{{template "snippets/home" .}}
+{{else}}
+{{template "snippets/pitch" .}}
+{{end}}
+{{template "base/footer" .}}
