@@ -8,8 +8,8 @@ This should be used with ubuntu/debian machines(32 bit)
 clone the repo and cd into the repo's  directory
 
 or run this command
-	git clone https://github.com/gernest/aurora-demo&&cd aurora-demo
 
+	git clone https://github.com/gernest/aurora-demo&&cd aurora-demo
 Then run the running script like this
 
 	bash ./run.sh
