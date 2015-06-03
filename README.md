@@ -15,3 +15,5 @@ Then run the running script like this
 	bash ./run.sh
 
 Now open ypour browser  and point it to http://localhost:8088
+
+All databases are in the db directory
