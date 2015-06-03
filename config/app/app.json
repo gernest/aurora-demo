@@ -1,7 +1,7 @@
 {
 	"name":"aurora",
 	"url":"",
-	"cdn_mode":false,
+	"cdn_mode":true,
 	"run_mode":"dev",
 	"dev_mode":true,
 	"title":"Aurora: The sweet like dating site",
