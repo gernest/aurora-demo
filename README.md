@@ -1,5 +1,5 @@
 # aurora-demo
-A demo for aurora
+A demo for [aurora](https://github.com/gernest/aurora)
 
 This should be used with ubuntu/debian machines(32 bit)
 
